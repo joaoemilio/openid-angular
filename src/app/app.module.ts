@@ -33,6 +33,7 @@ import { USER_PROVIDER, USERS_API } from './users';
 import { MainComponent } from './main.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { OAuthModule } from 'angular-oauth2-oidc';
 
 const httpInterceptorProviders: Type<any>[] = [
   RequestInterceptor,
@@ -70,6 +71,7 @@ export function getAPI(): string {
     CovalentLayoutModule,
     CovalentMediaModule,
     CovalentLoadingModule,
+    OAuthModule.forRoot(),
     CovalentHttpModule.forRoot({
       interceptors: [{
         interceptor: RequestInterceptor, paths: ['**'],
